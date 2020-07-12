@@ -1,5 +1,6 @@
 <!--Ayaan Busing and Trucking Institute -->
-<?php
+<!--Remove Php-->
+<!--<?php
 session_start();
 // connect to database
 $db = mysqli_connect('localhost', 'ayaan', 'pass1234', 'Ayaan');
@@ -57,7 +58,9 @@ $headers .= "Reply-To: $to \r\n";
 mail($to,$email_subject,$email_body,$headers);
 }
 }
-?>
+?>-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -163,12 +166,12 @@ mail($to,$email_subject,$email_body,$headers);
                 </div>
 
               </form>
-              <?php
+              <!--Removed php-->
+              <!--<?php
                 if(isset($_SESSION['error-msg'])) {
                   echo "<div id = 'error-msg'>".$_SESSION['error-msg']."</div>";
                   unset($_SESSION['error-msg']);
-                }
-              ?>
+                }-->
             </div>
           </div>
 
@@ -1880,12 +1883,13 @@ mail($to,$email_subject,$email_body,$headers);
           <div class="col-md-8  section-heading">
             <h2 class="heading mb-3 google-font-julius-sans-one">Contact Us</h2>
             <p class="lead text-dark">Drop us a line</p>
-            <?php
+            <!--Remove Php-->
+            <!--<?php
             if(isset($_SESSION['elsemessage'])){
               echo "<p>".$_SESSION['elsemessage']."</p>";
               unset($_SESSION['elsemessage']);
             }
-            ?>
+            ?>-->
           </div>
         </div>
 <!--Form-->
@@ -1925,12 +1929,13 @@ mail($to,$email_subject,$email_body,$headers);
               </div>
 
             </form>
-            <?php
+            <!--Remove php-->
+            <!--<?php
               if(isset($_SESSION['error-msg'])) {
                 echo "<div id = 'error-msg'>".$_SESSION['error-msg']."</div>";
                 unset($_SESSION['error-msg']);
               }
-            ?>
+            ?>-->
           </div>
         </div>
       </div>
