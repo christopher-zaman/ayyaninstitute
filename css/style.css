@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5,
     input[type="email"].form-control::-webkit-input-placeholder {
       color: orange;
     }
-    input[name="message"].form-control::-webkit-input-placeholder {
+    textarea[name="message"].form-control::-webkit-input-placeholder {
       color: orange;
     }
 
@@ -1044,7 +1044,9 @@ h1, h2, h3, h4, h5,
   font-size: 15px; }
 
 #contact-section .form-control {
-  background: #fff; }
+  background: #fff;
+  color: #000;
+}
 
   .first-form{
     max-width: 50%;
