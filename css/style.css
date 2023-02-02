@@ -10,6 +10,13 @@ body {
 
   }
   /*changes*/
+
+  .width-80-percent {
+    width: 80%;
+  }
+  .width-50-percent {
+    width: 50%;
+  }
   .welcome-text{
     /* margin-top: 200px; */
   }
