@@ -1,66 +1,3 @@
-<!--Ayaan Busing and Trucking Institute -->
-<!--Remove Php-->
-<!--<?php
-session_start();
-// connect to database
-$db = mysqli_connect('localhost', 'ayaan', 'pass1234', 'Ayaan');
-// submit button
-if(isset($_POST['submit'])){
-  $name = ($_POST['name']);
-  $email = ($_POST['email']);
-  $phone = ($_POST['phone']);
-  $message = ($_POST['message']);
-
-  // check for blank fields
-  if($_POST['name'] == " " || $_POST['email'] == " " || $_POST['phone'] == " " || $_POST['message'] == " ") {
-      $_SESSION['error-msg'] = "error: all fields are required.";
-    }else{
-  $sql ="INSERT INTO AyaanTable(name, email, phone, message) VALUES('$name', '$email', '$phone', '$message')";
-  mysqli_query($db, $sql);
-  $_SESSION['thanks'] = "Thanks!";
-  // header ("location: index.php"); //redirect route.
-
-  // send the customers information to the business owners email
-  $email_from = "czaman9@gmail.com, ayaan.busing.trucking@gmail.com";
-  $email_subject = "New Form Submission";
-  $email_body = "You have received a message from $name.\n Name: $name \n Email: $email \n Phone: $phone \n Message: $message";
-
-  $to = "czaman9@gmail.com";
-  $headers = "From: $email_from \r\n";
-  $headers .= "Reply-To: $to \r\n";
-
-  mail($to,$email_subject,$email_body,$headers);
-}
-}
-
-// submit email form
-if(isset($_POST['submitEmail'])){
-  $emailAddress = ($_POST['emailAddress']);
-
-  // check for blank field
-  if($_POST['emailAddress'] == ""){
-      $_SESSION['email-error'] = "error: enter a valid email.";
-    }else{
-
-  $sql ="INSERT INTO subscriptionTable(emailAddress) VALUES('$emailAddress')";
-  mysqli_query($db, $sql);
-
-
-// send the submitted email address to the business owner
-$email_from = "czaman9@gmail.com";
-$email_subject = "New Form Submission";
-$email_body = "You've received a customers email address from the website: \n Their email address is below:\n $emailAddress";
-
-$to = "czaman9@gmail.com, ayaan.busing.trucking@gmail.com";
-$headers = "From: $email_from \r\n";
-$headers .= "Reply-To: $to \r\n";
-
-mail($to,$email_subject,$email_body,$headers);
-}
-}
-?>-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,9 +26,7 @@ mail($to,$email_subject,$email_body,$headers);
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
   <div class="site-wrap">
-
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -101,11 +36,11 @@ mail($to,$email_subject,$email_body,$headers);
       <div class="site-mobile-menu-body"></div>
     </div>
 
-
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
       <div class="container-fluid">
         <div class="d-flex align-items-center">
-          <div class="site-logo"><a href="index.html">Ayaan Institute<span>.</span> </a></div>
+          <div class="site-logo"><a href="index.html">Ayaan Institute <span>.</span> </a>
+          </div>
           <div class="ml-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
@@ -127,91 +62,11 @@ mail($to,$email_subject,$email_body,$headers);
       </div>
     </header>
 
-<!-- start commenting out the old main banner video with overlaying form 1-->
-    <!-- <div class="embed-responsive embed-responsive-16by9" style="z-index: 1;">
-      <div class="col-lg-12 mx-auto text-center" data-aos="fade-up" style="position: absolute; margin: -550px 0 0 0;">
-        <div class="welcome-text">
-          <h1 class="text-white">Ayaan Busing and Trucking Institute</h1>
-          <div class="row justify-content-center">
-            <div class="col-md-7"> -->
-              <!--Form One Form 1-->
-              <!-- <form name="submit-to-google-sheet" id="form-one" class="first-form" method="post" data-aos="fade">
-                <div class="row">
-                  <div class="col-md-12 mb-3 mb-lg-0">
-                    <input type="text" class="form-control bottom-border-only" placeholder="Name" name="name">
-                  </div>
+<!--Home Large section begins-->
 
-                </div>
-
-                <div class="row important-from-group">
-                  <div class="col-md-12">
-                    <input type="email" class="form-control bottom-border-only" placeholder="Email" name="email">
-                  </div>
-                </div>
-
-                <div class="row important-from-group">
-                  <div class="col-md-12">
-                    <input type="text" class="form-control bottom-border-only"placeholder="Phone Number" name="phone">
-                  </div>
-                </div>
-                <div class="row important-from-group"> -->
-                  <!--<div class="col-md-12">
-                    <textarea type="text" name="message" class="form-control" id="" cols="30" rows="4"
-                      placeholder="Write your message here."></textarea>
-                  </div>-->
-                <!-- </div>
-
-                <div class="form-group row important-from-group">
-                  <div class="col-md-6">
-                    <input name="submit" type="submit" class="btn btn-outline-success py-3 px-5 btn-block text-left" value="Get In Touch">
-                  </div>
-                </div>
-
-              </form> -->
-              <!--Removed php-->
-              <!--<?php
-                if(isset($_SESSION['error-msg'])) {
-                  echo "<div id = 'error-msg'>".$_SESSION['error-msg']."</div>";
-                  unset($_SESSION['error-msg']);
-                }-->
-
-                <!-- <script>
-                  const scriptURL = 'https://script.google.com/macros/s/AKfycby-6cWDiP_q3B9GCzaiN3NY4GIuRcouikBWo013wOkn3SqrnNJf/exec'
-                  const form = document.forms['submit-to-google-sheet']
-                  form.addEventListener('submit', e => {
-                    e.preventDefault()
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                      .then(response => console.log('Success!', response))
-                      .catch(error => console.error('Error!', error.message))
-                  document.forms['form-one'].reset()
-                  })
-              </script>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <video autoplay loop class="embed-responsive-item" style="z-index: -1;">
-          <source src="videos/home-video.mp4" type="video/mp4">
-      </video>
-
-    </div> -->
-<!-- start commenting out the old main banner video with overlaying form 1-->
-
-<!-- new background -->
-<!--Home section begins-->
-
-<div class="row" data-aos="fade-left">
+<div class="row d-none d-sm-none d-md-none d-lg-none d-xl-block" data-aos="fade-left">
 <div class="col-md-12">
-  <!-- <p class="google-font-julius-sans-one text-white larger-text fix-top-layer" data-aos="fade-up" data-aos-delay="100">American Heart Association Certified Classes</p>
-  <p class="google-font-julius-sans-one larger-text fix-top-layer-1" data-aos="fade-left" data-aos-delay="600"><a href="basic-life-support.html" class="text-white">BLS</a></p>
-  <p class="google-font-julius-sans-one larger-text fix-top-layer-2" data-aos="fade-right" data-aos-delay="1200"><a href="acls.html" class="text-white">ACLS</a></p>
-  <p class="google-font-julius-sans-one larger-text fix-top-layer-3" data-aos="fade-down" data-aos-delay="1800"><a href="pediatric-advanced-life-support.html" class="text-white">PALS</a></p>
-  <img src="kmgprep-images/doctored-main-image.svg" class="make-responsive-image adjust-height" /> -->
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -221,28 +76,60 @@ mail($to,$email_subject,$email_body,$headers);
 <div class="carousel-item active">
   <img class="d-block w-100" src="images/banner-one.png" alt="Driving School"/>
   <div class="carousel-caption d-none d-md-block">
-    <h5 class="google-font-julius-sans-one text-white larger-text text-left" data-aos="fade-up" data-aos-delay="100">Certified Classes</h5>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-left" data-aos-delay="600"><a href="#contact-section" class="text-white">Motorcycle</p>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-right" data-aos-delay="1200"><a href="#contact-section" class="text-white">Truck</a></p>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-down" data-aos-delay="1800"><a href="#contact-section" class="text-white">Defensive Driving</a></p>
+<p class="width-50-percent larger-text text-center download-links" data-aos="fade-down" data-aos-delay="100">
+  
+  <a href="https://apps.apple.com/us/app/cdl-way/id1614906972"
+    class="text-white"><img src="images/apple-store.png" class="app-store-icon" />Download the CDL App
+  </a>
+</p>
+<p class="width-50-percent larger-text text-center download-links" data-aos="fade-down" data-aos-delay="100">
+  <a href="https://play.google.com/store/apps/details?id=com.kolkatatech.eldtayaan"
+    class="text-white"><img src="images/google-play.png" />Get it on Google Play</a></p>
+
+    <h5 class="width-50-percent text-white larger-text text-left" data-aos="fade-up" data-aos-delay="100">Certified Classes</h5>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-left" data-aos-delay="600"><a href="#contact-section" class="text-white">Motorcycle</p>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-right" data-aos-delay="1200"><a href="#contact-section" class="text-white">Truck</a></p>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-down" data-aos-delay="1800"><a href="#contact-section" class="text-white">Defensive Driving</a></p>
+    
   </div>
 </div>
 <div class="carousel-item">
   <img class="d-block w-100" src="images/banner-two.png" alt="Defensive Driving School">
   <div class="carousel-caption d-none d-md-block">
-    <h5 class="google-font-julius-sans-one text-white larger-text text-left" data-aos="fade-up" data-aos-delay="100">Certified Classes</h5>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-left" data-aos-delay="600"><a href="#contact-section" class="text-white">Motorcycle</p>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-right" data-aos-delay="1200"><a href="#contact-section" class="text-white">Truck</a></p>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-down" data-aos-delay="1800"><a href="#contact-section" class="text-white">Defensive Driving</a></p>
+ 
+  <p class="width-50-percent larger-text text-center download-links" data-aos="fade-down" data-aos-delay="100">
+  
+    <a href="https://apps.apple.com/us/app/cdl-way/id1614906972" class="text-white"><img src="images/apple-store.png"
+        class="app-store-icon" />Download the CDL App
+    </a>
+  </p>
+  <p class="width-50-percent larger-text text-center download-links" data-aos="fade-down" data-aos-delay="100">
+    <a href="https://play.google.com/store/apps/details?id=com.kolkatatech.eldtayaan" class="text-white"><img
+        src="images/google-play.png" />Get it on Google Play</a>
+  </p>
+    <h5 class="width-50-percent text-white larger-text text-left" data-aos="fade-up" data-aos-delay="100">Certified Classes</h5>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-left" data-aos-delay="600"><a href="#contact-section" class="text-white">Motorcycle</p>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-right" data-aos-delay="1200"><a href="#contact-section" class="text-white">Truck</a></p>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-down" data-aos-delay="1800"><a href="#contact-section" class="text-white">Defensive Driving</a></p>
   </div>
   </div>
 <div class="carousel-item">
   <img class="d-block w-100" src="images/banner-three.png" alt="Motorcycle Driving School">
   <div class="carousel-caption d-none d-md-block">
-    <h5 class="google-font-julius-sans-one text-white larger-text text-left" data-aos="fade-up" data-aos-delay="100">Certified Classes</h5>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-left" data-aos-delay="600"><a href="#contact-section" class="text-white">Motorcycle</p>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-right" data-aos-delay="1200"><a href="#contact-section" class="text-white">Truck</a></p>
-    <p class="google-font-julius-sans-one larger-text text-left" data-aos="fade-down" data-aos-delay="1800"><a href="#contact-section" class="text-white">Defensive Driving</a></p>
+  <p class="width-50-percent larger-text text-center download-links" data-aos="fade-down" data-aos-delay="100">
+  
+    <a href="https://apps.apple.com/us/app/cdl-way/id1614906972" class="text-white"><img src="images/apple-store.png"
+        class="app-store-icon" />Download the CDL App
+    </a>
+  </p>
+  <p class="width-50-percent larger-text text-center download-links" data-aos="fade-down" data-aos-delay="100">
+    <a href="https://play.google.com/store/apps/details?id=com.kolkatatech.eldtayaan" class="text-white"><img
+        src="images/google-play.png" />Get it on Google Play</a>
+  </p>
+    <h5 class="width-50-percent text-white larger-text text-left" data-aos="fade-up" data-aos-delay="100">Certified Classes</h5>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-left" data-aos-delay="600"><a href="#contact-section" class="text-white">Motorcycle</p>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-right" data-aos-delay="1200"><a href="#contact-section" class="text-white">Truck</a></p>
+    <p class="width-50-percent larger-text text-left" data-aos="fade-down" data-aos-delay="1800"><a href="#contact-section" class="text-white">Defensive Driving</a></p>
   </div>
 </div>
 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -258,15 +145,60 @@ mail($to,$email_subject,$email_body,$headers);
 </div>
 </div>
 <!--home section ends-->
+
+<!--
+
+  Get that app CDL WAY it's blue and black. 
+If you want Class B 🚚 🚌  Study General Knowledge Passenger Endorsement Air Brake & School Bus Endorsement 
+For Class A 🚛 
+Study General knowledge Passenger Endorsement Air brake & Combination. 
+Make sure to take all your documents with you to dmv like passport, work authorization, green card 
+-->
+
+
+<!--New Mobile Section with app download links section begins-->
+
+<!--Mobile Begins-->
+<!--Home section begins-->
+<div class="site-section d-block d-sm-block d-md-block d-lg-block d-xl-none mobile-app-bg">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-md-8 section-heading">
+        <br><br><br>
+        <a href="https://apps.apple.com/us/app/cdl-way/id1614906972" class="apple-app apple-app-mobile"><img
+            src="images/apple-store.png" class="app-store-icon" />Download the CDL App<img src="images/app-cover.jpeg"
+            class="app-cover" /></a>
+            <a href="https://play.google.com/store/apps/details?id=com.kolkatatech.eldtayaan"
+              class="android-app android-app-mobile"><img src="images/google-play.png" />Get it on Google Play</a>
+       
+        <br>
+        <br>
+        <br>
+        <br>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!--home section ends-->
+<!--Mobile Ends-->
+
+
+
 <!-- new background -->
-
-
-
 
 
 
     <div class="site-section" id="services-we-offer">
       <div class="container">
+        <div class="row justify-content-center text-center mb-5" data-aos="">
+          <div class="col-md-8  section-heading">
+            <h2 class="heading mb-3">Driving Specials</h2>
+            <p class="lead text-dark">Make an Appointment by phone today <br>Call or Text <a
+                href="tel:+1-929-507-8721">929-507-8721</a>.<br />
+              We Teach Safe Driving on Land & Sea.<br />Free Training and financing if you <strong>qualify.</strong></p>
+          </div>
+        </div>
         <!-- Slider -->
         <div class="owl-carousel nonloop-block-14 block-14" data-aos="fade">
           <!--<img src="https://img.icons8.com/offices/80/000000/convertible.png">-->
