@@ -19,8 +19,11 @@ body {
 }
 .mobile-app-bg {
   background:url(../images/mobile-app-bg.png);
-  background-repeat: no-repeat;
+  background-size: cover;
 
+}
+.font-size-larger {
+  font-size: larger;  
 }
   .width-80-percent {
     width: 80%;
@@ -82,6 +85,9 @@ body {
     }
     .get-the-app-text{
       
+    }
+    .font-size-medium {
+      font-size: medium;
     }
   .app-cover {
     max-width: 8%;
@@ -291,7 +297,8 @@ h1, h2, h3, h4, h5,
   padding: 2.5em 0; }
   @media (min-width: 768px) {
     .site-section {
-      padding: 5em 0; } }
+      padding: 5em 0;
+      height: 800px; } }  
   .site-section.site-section-sm {
     padding: 4em 0; }
 
