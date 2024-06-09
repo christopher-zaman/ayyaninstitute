@@ -1,0 +1,22 @@
+Step 1. Register domain name
+Step 2. CloudFlare
+	add site
+	select free
+	delete name servers click next
+	copy assigned cloud flare name servers
+	
+Step 3. Hover
+	paste cloud flare name servers into hover
+	Click continue
+	Follow steps - always use https
+	Save
+
+Step 4. Hover
+	Go to DNS then records
+	Add record
+	Add two A records and a CNAME
+Example:	
+	CNAME www queenspowerwash.com Proxied Auto Edit
+	A queenspowerwash.com 185.199.108.153 Proxied Auto Edit
+	A queenspowerwash.com 185.199.109.153 Proxied Auto Edit
+	(The A content values are the GitHub Pages records)
